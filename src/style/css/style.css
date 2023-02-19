@@ -12,3 +12,74 @@ body {
   font-size: 1.6rem;
   font-family: "Kumbh Sans", sans-serif;
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid hsl(223, 64%, 98%);
+  padding: 2rem 2.4rem;
+}
+@media screen and (min-width: 80rem) {
+  .navbar {
+    padding: 3rem 2rem;
+    max-width: 111rem;
+    margin: auto;
+  }
+}
+.navbar__left {
+  display: flex;
+  gap: 1.6rem;
+}
+@media screen and (min-width: 80rem) {
+  .navbar__left {
+    gap: 5.6rem;
+  }
+}
+.navbar__left--menu {
+  display: grid;
+  place-items: center;
+}
+@media screen and (min-width: 80rem) {
+  .navbar__left--menu {
+    display: none;
+  }
+}
+.navbar__left--links {
+  display: none;
+  list-style: none;
+  align-items: center;
+}
+@media screen and (min-width: 80rem) {
+  .navbar__left--links {
+    display: flex;
+    gap: 3.2rem;
+  }
+}
+.navbar__left--links-link a {
+  color: hsl(219, 9%, 45%);
+  font-size: 1.5rem;
+  line-height: 2.6rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  text-decoration: none;
+}
+.navbar__userInfo {
+  display: flex;
+  align-items: center;
+  gap: 2.2rem;
+}
+@media screen and (min-width: 80rem) {
+  .navbar__userInfo {
+    gap: 4.6rem;
+  }
+}
+.navbar__userInfo--avatar-image {
+  width: 2.4rem;
+  height: auto;
+}
+@media screen and (min-width: 80rem) {
+  .navbar__userInfo--avatar-image {
+    width: 5rem;
+  }
+}
