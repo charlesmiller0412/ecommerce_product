@@ -1,9 +1,9 @@
-export const UserLinks = (className: any) => {
+export const UserLinks = (props: any) => {
     let links = ["collections", "men", "women", "about", "contact"];
     return (
-        <ul className="navbar__left--links">
+        <ul className={`${props.className}`}>
             {links.map((link: string) => (
-                <li className="navbar__left--links-link" key={link}>
+                <li className={`${props.className}-link`} key={link}>
                     <a href="#">{link}</a>
                 </li>
             ))}
