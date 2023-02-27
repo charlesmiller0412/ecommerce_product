@@ -1,0 +1,94 @@
+.gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+    align-items: center;
+    @media screen and (min-width: $mobile) {
+        width: 50%;
+        min-width: fit-content;
+    }
+    &__activeImage {
+        width: 100%;
+        height: 30rem;
+        object-fit: cover;
+        @media screen and (min-width: 40rem) {
+            object-position: 0 60%;
+        }
+        @media screen and (min-width: $mobile) {
+            width: 44.5rem;
+            height: auto;
+            border-radius: 1.5rem;
+            -webkit-border-radius: 1.5rem;
+            -moz-border-radius: 1.5rem;
+            -ms-border-radius: 1.5rem;
+            -o-border-radius: 1.5rem;
+        }
+    }
+    &__thumbnails {
+        display: none;
+        gap: 2.8rem;
+        list-style: none;
+        &--image {
+            cursor: pointer;
+            position: relative;
+            display: grid;
+            place-items: center;
+            border: 3px solid transparent;
+            &:hover::after {
+                content: "";
+                top: 0;
+                left: 0;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(
+                    0deg,
+                    rgba(255, 255, 255, 0.5),
+                    rgba(255, 255, 255, 0.5)
+                );
+                border-radius: 1rem;
+                -webkit-border-radius: 1rem;
+                -moz-border-radius: 1rem;
+                -ms-border-radius: 1rem;
+                -o-border-radius: 1rem;
+            }
+            &-active {
+                border: 3px solid #ff7e1b;
+                border-radius: 1.3rem;
+                -webkit-border-radius: 1.3rem;
+                -moz-border-radius: 1.3rem;
+                -ms-border-radius: 1.3rem;
+                -o-border-radius: 1.3rem;
+                &::after {
+                    content: "";
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    background: linear-gradient(
+                        0deg,
+                        rgba(255, 255, 255, 0.75),
+                        rgba(255, 255, 255, 0.75)
+                    );
+                    border-radius: 1rem;
+                    -webkit-border-radius: 1rem;
+                    -moz-border-radius: 1rem;
+                    -ms-border-radius: 1rem;
+                    -o-border-radius: 1rem;
+                }
+            }
+            & img {
+                width: 8.8rem;
+                border-radius: 1rem;
+                -webkit-border-radius: 1rem;
+                -moz-border-radius: 1rem;
+                -ms-border-radius: 1rem;
+                -o-border-radius: 1rem;
+            }
+        }
+        @media screen and (min-width: $mobile) {
+            display: flex;
+        }
+    }
+}

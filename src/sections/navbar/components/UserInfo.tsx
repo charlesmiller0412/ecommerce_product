@@ -19,7 +19,11 @@ export const UserInfo = (props: any) => {
                     setShowUserMenu(false);
                 }}
             >
-                <CartIcon />
+                <CartIcon
+                    className="navbar__userInfo--cart-image"
+                    height={20}
+                    width={22}
+                />
             </div>
             <div
                 className="navbar__userInfo--avatar"

@@ -11,4 +11,19 @@ html {
 body {
     font-size: 1.6rem;
     font-family: $kumbh;
+    overflow-x: hidden;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    max-width: 111rem;
+    @media screen and (min-width: $mobile) {
+        flex-direction: row;
+        padding: 9rem 0;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+        gap: 5vw;
+    }
 }

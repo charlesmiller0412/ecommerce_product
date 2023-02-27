@@ -6,7 +6,7 @@
     padding: 2rem 2.4rem;
     position: relative;
     z-index: 1;
-    @media screen and (min-width: 80rem) {
+    @media screen and (min-width: $mobile) {
         padding: 3rem 2rem;
         max-width: 111rem;
         margin: auto;
@@ -14,7 +14,7 @@
     &__left {
         display: flex;
         gap: 1.6rem;
-        @media screen and (min-width: 80rem) {
+        @media screen and (min-width: $mobile) {
             gap: 5.6rem;
         }
         &--menu {
@@ -22,10 +22,11 @@
             display: grid;
             place-items: center;
             cursor: pointer;
+            user-select: none;
             & img {
                 width: 14px;
             }
-            @media screen and (min-width: 80rem) {
+            @media screen and (min-width: $mobile) {
                 display: none;
             }
         }
@@ -33,7 +34,7 @@
             display: none;
             list-style: none;
             align-items: center;
-            @media screen and (min-width: 80rem) {
+            @media screen and (min-width: $mobile) {
                 display: flex;
                 gap: 3.2rem;
             }
@@ -47,7 +48,7 @@
                 &:hover {
                     color: $grayBlueD;
                 }
-                @media screen and (min-width: 80rem) {
+                @media screen and (min-width: $mobile) {
                     &:hover::after {
                         content: "";
                         background: $orange;
@@ -74,7 +75,7 @@
         align-items: center;
         gap: 2.2rem;
         user-select: none;
-        @media screen and (min-width: 80rem) {
+        @media screen and (min-width: $mobile) {
             gap: 4.6rem;
             position: relative;
         }
@@ -99,7 +100,7 @@
                 -moz-border-radius: 50%;
                 -ms-border-radius: 50%;
                 -o-border-radius: 50%;
-                @media screen and (min-width: 80rem) {
+                @media screen and (min-width: $mobile) {
                     width: 5rem;
                 }
                 &:hover {
@@ -118,7 +119,7 @@
             translate: -50%;
             width: 95%;
             min-width: 36rem;
-            @media screen and (min-width: 80rem) {
+            @media screen and (min-width: $mobile) {
                 top: 6rem;
                 left: 0;
                 width: 36rem;
@@ -143,7 +144,6 @@
             left: 50%;
             list-style: none;
             background-color: $white;
-            padding: 2rem 4rem;
             translate: -50%;
             border-radius: 1rem;
             -webkit-border-radius: 1rem;
@@ -153,21 +153,28 @@
             box-shadow: 0px 20px 50px -20px rgba(29, 32, 38, 0.503143);
             width: 95%;
             min-width: 36rem;
-            @media screen and (min-width: 80rem) {
+            @media screen and (min-width: $mobile) {
                 top: 6rem;
                 left: 50%;
                 min-width: fit-content;
                 translate: -30%;
+                padding: 2rem 4rem;
             }
             &-heading {
-                margin: 0 0 2rem 0;
-                font-size: 1.8rem;
+                padding: 2.4rem;
+                font-weight: 700;
+                font-size: 1.6rem;
+                line-height: 2rem;
+                border-bottom: 1px solid $grayBlueL;
+                @media screen and (min-width: $mobile) {
+                    margin: 0 0 2rem 0;
+                }
             }
             &-link {
                 margin: 4rem 0;
                 text-align: center;
                 width: 100%;
-                @media screen and (min-width: 80rem) {
+                @media screen and (min-width: $mobile) {
                     text-align: left;
                     margin: 1rem 0;
                 }
@@ -196,7 +203,7 @@
         -moz-transition: all 0.2s;
         -ms-transition: all 0.2s;
         -o-transition: all 0.2s;
-        @media screen and (min-width: 80rem) {
+        @media screen and (min-width: $mobile) {
             display: none;
         }
         &-active {
@@ -224,7 +231,7 @@
             -moz-transition: all 0.2s;
             -ms-transition: all 0.2s;
             -o-transition: all 0.2s;
-            @media screen and (min-width: 80rem) {
+            @media screen and (min-width: $mobile) {
                 display: none;
             }
             &-active {
