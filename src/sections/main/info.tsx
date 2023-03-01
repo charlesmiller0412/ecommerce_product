@@ -2,7 +2,7 @@ import { CartIcon } from "../../assets/cartSVG";
 import { MinusIcon } from "../../assets/Minus";
 import { PlusIcon } from "../../assets/Plus";
 import { Button } from "../../components/button";
-import sneakerImage from "/images/image-product-1-thumbnail.jpg";
+import sneakerImage from "../../assets/image-product-1-thumbnail.jpg";
 export const Info = (props: any) => {
     // * product data
     let sneakerInfo = {

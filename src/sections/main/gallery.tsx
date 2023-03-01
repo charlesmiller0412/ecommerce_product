@@ -2,35 +2,38 @@ import { useEffect, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { PrevIcon } from "../../assets/PrevIcon";
 import { NextIcon } from "../../assets/NextIcon";
+import Image1 from "../../assets/image-product-1.jpg";
+import Image2 from "../../assets/image-product-2.jpg";
+import Image3 from "../../assets/image-product-3.jpg";
+import Image4 from "../../assets/image-product-4.jpg";
+import Image1Thumb from "../../assets/image-product-1-thumbnail.jpg";
+import Image2Thumb from "../../assets/image-product-2-thumbnail.jpg";
+import Image3Thumb from "../../assets/image-product-3-thumbnail.jpg";
+import Image4Thumb from "../../assets/image-product-4-thumbnail.jpg";
 
 export default function Gallery(props: any) {
     const desktop = useMediaQuery("(min-width: 800px)");
     const [activeThumb, setActiveThumb] = useState(0);
 
-    let images = [
-        "/images/image-product-1.jpg",
-        "/images/image-product-2.jpg",
-        "/images/image-product-3.jpg",
-        "/images/image-product-4.jpg",
-    ];
+    let images = [Image1, Image2, Image3, Image4];
 
     let imageThumb = [
         {
-            image: "/images/image-product-1-thumbnail.jpg",
+            image: Image1Thumb,
             key: 0,
         },
         {
-            image: "/images/image-product-2-thumbnail.jpg",
+            image: Image2Thumb,
             key: 1,
             style: { objectPosition: "top" },
         },
         {
-            image: "/images/image-product-3-thumbnail.jpg",
+            image: Image3Thumb,
             key: 2,
             style: { objectPosition: "top" },
         },
         {
-            image: "/images/image-product-4-thumbnail.jpg",
+            image: Image4Thumb,
             key: 3,
         },
     ];

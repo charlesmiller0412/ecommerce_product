@@ -8,7 +8,7 @@ function App() {
     const [shoppingCart, setShoppingCart] = useState({});
     const [showMobileMenu, setShowMobileMenu] = useState(false);
     const [quantity, setQuantity] = useState(0);
-    const [showLighthouse, setShowLighthouse] = useState(true);
+    const [showLighthouse, setShowLighthouse] = useState(false);
 
     return (
         <div className="App">
