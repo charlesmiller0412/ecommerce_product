@@ -1,15 +1,19 @@
 {
     "name": "ecommerce_product",
+    "homepage": "https://github.com/charlesmiller0412/ecommerce_product",
     "private": true,
     "version": "0.0.0",
     "type": "module",
     "scripts": {
         "dev": "vite",
         "build": "tsc && vite build",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist",
         "preview": "vite preview",
         "sass": "sass src/style/sass:src/style/css --watch --no-source-map"
     },
     "dependencies": {
+        "gh-pages": "^5.0.0",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "sass": "^1.58.3",
