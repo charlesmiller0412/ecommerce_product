@@ -1,4 +1,4 @@
-import { UserLinks } from "./navbar/components/userLinks";
+import { UserLinks } from "../navbar/components/userLinks";
 
 export default function MobileMenu(props: any) {
     return (

@@ -11,13 +11,24 @@ html {
 body {
     font-size: 1.6rem;
     font-family: $kumbh;
-    overflow-x: hidden;
+}
+
+.App {
+    height: 100vh;
+    height: 100dvh;
+}
+header {
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
 main {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     max-width: 111rem;
+    height: 85%;
     @media screen and (min-width: $mobile) {
         flex-direction: row;
         padding: 9rem 0;
@@ -25,5 +36,6 @@ main {
         justify-content: center;
         align-items: center;
         gap: 5vw;
+        height: 85%;
     }
 }

@@ -9,19 +9,61 @@
     }
     &__activeImage {
         width: 100%;
-        height: 30rem;
-        object-fit: cover;
-        @media screen and (min-width: 40rem) {
-            object-position: 0 60%;
-        }
+        position: relative;
+        user-select: none;
+        cursor: pointer;
         @media screen and (min-width: $mobile) {
-            width: 44.5rem;
-            height: auto;
-            border-radius: 1.5rem;
-            -webkit-border-radius: 1.5rem;
-            -moz-border-radius: 1.5rem;
-            -ms-border-radius: 1.5rem;
-            -o-border-radius: 1.5rem;
+            width: fit-content;
+        }
+        &--image {
+            width: 100%;
+            height: 30rem;
+            object-fit: cover;
+            @media screen and (min-width: $mobile) {
+                width: 44.5rem;
+                height: auto;
+                border-radius: 1.5rem;
+                -webkit-border-radius: 1.5rem;
+                -moz-border-radius: 1.5rem;
+                -ms-border-radius: 1.5rem;
+                -o-border-radius: 1.5rem;
+            }
+        }
+        &--nextIcon,
+        &--prevIcon {
+            position: absolute;
+            width: 4rem;
+            height: 4rem;
+            top: 50%;
+            background-color: #fff;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            -webkit-border-radius: 50%;
+            -moz-border-radius: 50%;
+            -ms-border-radius: 50%;
+            -o-border-radius: 50%;
+            cursor: pointer;
+            transform: translateY(-50%);
+            -webkit-transform: translateY(-50%);
+            -moz-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            -o-transform: translateY(-50%);
+            @media screen and (min-width: $mobile) {
+                display: none;
+            }
+            &:hover path {
+                stroke: $orange;
+            }
+            & path {
+                stroke: $black;
+            }
+        }
+        &--prevIcon {
+            left: 1.6rem;
+        }
+        &--nextIcon {
+            right: 1.6rem;
         }
     }
     &__thumbnails {

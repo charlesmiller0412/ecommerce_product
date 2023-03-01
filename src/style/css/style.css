@@ -11,13 +11,25 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Kumbh Sans", sans-serif;
-  overflow-x: hidden;
+}
+
+.App {
+  height: 100vh;
+  height: 100dvh;
+}
+
+header {
+  width: 100%;
+  top: 0;
+  left: 0;
 }
 
 main {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   max-width: 111rem;
+  height: 85%;
 }
 @media screen and (min-width: 61rem) {
   main {
@@ -27,6 +39,7 @@ main {
     justify-content: center;
     align-items: center;
     gap: 5vw;
+    height: 85%;
   }
 }
 
@@ -125,12 +138,32 @@ main {
 }
 .navbar__userInfo--cartIcon {
   cursor: pointer;
+  position: relative;
 }
 .navbar__userInfo--cartIcon:hover path {
   fill: hsl(0, 0%, 0%);
 }
 .navbar__userInfo--cartIcon path {
   fill: hsl(219, 9%, 45%);
+}
+.navbar__userInfo--cartIcon-quantity {
+  position: absolute;
+  top: -20%;
+  right: -30%;
+  display: grid;
+  place-items: center;
+  background: hsl(26, 100%, 55%);
+  color: hsl(0, 0%, 100%);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.2rem;
+  border-radius: 6.5px;
+  -webkit-border-radius: 6.5px;
+  -moz-border-radius: 6.5px;
+  -ms-border-radius: 6.5px;
+  -o-border-radius: 6.5px;
+  width: 19px;
+  height: 13px;
 }
 .navbar__userInfo--avatar {
   cursor: pointer;
@@ -169,7 +202,7 @@ main {
   .navbar__userInfo--cart-items {
     top: 6rem;
     left: 0;
-    width: 36rem;
+    width: 37rem;
     translate: -50%;
   }
 }
@@ -184,6 +217,63 @@ main {
   display: grid;
   place-items: center;
   height: 18.8rem;
+  padding: 2.4rem 2.4rem 3.2rem 2.4rem;
+  gap: 2.4rem;
+}
+.navbar__userInfo--cart-items-content-listing {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.navbar__userInfo--cart-items-content-listing-image {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 0.4rem;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  -ms-border-radius: 0.4rem;
+  -o-border-radius: 0.4rem;
+}
+.navbar__userInfo--cart-items-content-listing-info-title {
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 2.6rem;
+  color: hsl(219, 9%, 45%);
+  text-transform: capitalize;
+}
+.navbar__userInfo--cart-items-content-listing-info-pricing {
+  display: flex;
+  gap: 1rem;
+}
+.navbar__userInfo--cart-items-content-listing-info-pricing-quantity {
+  font-size: 1.6rem;
+  color: hsl(219, 9%, 45%);
+  line-height: 2.6rem;
+}
+.navbar__userInfo--cart-items-content-listing-info-pricing-finalPrice {
+  font-weight: 700;
+  line-height: 2.6rem;
+}
+.navbar__userInfo--cart-items-content-listing-update {
+  cursor: pointer;
+}
+.navbar__userInfo--cart-items-content-listing-delete {
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.navbar__userInfo--cart-items-content-listing-delete svg {
+  width: 2.2rem;
+  height: 2rem;
+}
+.navbar__userInfo--cart-items-content-listing-delete:hover path {
+  fill: hsl(0, 0%, 0%);
+}
+.navbar__userInfo--cart-items-content-listing-delete path {
+  fill: hsl(220, 14%, 75%);
+}
+.navbar__userInfo--cart-items-content-checkout {
+  width: 100%;
 }
 .navbar__userInfo--userMenu {
   position: absolute;
@@ -329,16 +419,22 @@ main {
 }
 .gallery__activeImage {
   width: 100%;
-  height: 30rem;
-  object-fit: cover;
-}
-@media screen and (min-width: 40rem) {
-  .gallery__activeImage {
-    object-position: 0 60%;
-  }
+  position: relative;
+  user-select: none;
+  cursor: pointer;
 }
 @media screen and (min-width: 61rem) {
   .gallery__activeImage {
+    width: fit-content;
+  }
+}
+.gallery__activeImage--image {
+  width: 100%;
+  height: 30rem;
+  object-fit: cover;
+}
+@media screen and (min-width: 61rem) {
+  .gallery__activeImage--image {
     width: 44.5rem;
     height: auto;
     border-radius: 1.5rem;
@@ -347,6 +443,43 @@ main {
     -ms-border-radius: 1.5rem;
     -o-border-radius: 1.5rem;
   }
+}
+.gallery__activeImage--nextIcon, .gallery__activeImage--prevIcon {
+  position: absolute;
+  width: 4rem;
+  height: 4rem;
+  top: 50%;
+  background-color: #fff;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+@media screen and (min-width: 61rem) {
+  .gallery__activeImage--nextIcon, .gallery__activeImage--prevIcon {
+    display: none;
+  }
+}
+.gallery__activeImage--nextIcon:hover path, .gallery__activeImage--prevIcon:hover path {
+  stroke: hsl(26, 100%, 55%);
+}
+.gallery__activeImage--nextIcon path, .gallery__activeImage--prevIcon path {
+  stroke: hsl(0, 0%, 0%);
+}
+.gallery__activeImage--prevIcon {
+  left: 1.6rem;
+}
+.gallery__activeImage--nextIcon {
+  right: 1.6rem;
 }
 .gallery__thumbnails {
   display: none;
@@ -578,7 +711,78 @@ main {
 .info__cart--quantity-minus-icon {
   height: 0.33rem;
 }
-.info__cart--cart {
+.info__cart--cart:hover {
+  background: #ffab6a;
+}
+.info__cart--cart-text {
+  white-space: nowrap;
+  color: hsl(0, 0%, 100%);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 2rem;
+}
+@media screen and (min-width: 61rem) {
+  .info__cart--cart {
+    width: 100%;
+  }
+}
+
+.lighthouse {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  z-index: 100;
+  display: none;
+}
+@media screen and (min-width: 61rem) {
+  .lighthouse {
+    display: flex;
+  }
+}
+.lighthouse__gallery {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.lighthouse__gallery--close {
+  cursor: pointer;
+  text-align: right;
+  margin-bottom: 2.4rem;
+}
+.lighthouse__gallery--close:hover path {
+  fill: hsl(26, 100%, 55%);
+}
+.lighthouse__gallery--close path {
+  fill: hsl(0, 0%, 100%);
+}
+.lighthouse__gallery--images {
+  position: relative;
+}
+.lighthouse__gallery--images .gallery__activeImage--image {
+  cursor: default;
+}
+@media screen and (min-width: 61rem) {
+  .lighthouse__gallery--images .gallery__activeImage--nextIcon, .lighthouse__gallery--images .gallery__activeImage--prevIcon {
+    display: grid;
+  }
+}
+.lighthouse__gallery--images .gallery__activeImage--nextIcon {
+  right: -4.5%;
+}
+.lighthouse__gallery--images .gallery__activeImage--prevIcon {
+  left: -4.5%;
+}
+
+.button {
+  user-select: none;
   padding: 1.8rem 7.5rem;
   background: hsl(26, 100%, 55%);
   display: flex;
@@ -595,10 +799,10 @@ main {
   -ms-border-radius: 1rem;
   -o-border-radius: 1rem;
 }
-.info__cart--cart:hover {
+.button:hover {
   background: #ffab6a;
 }
-.info__cart--cart-text {
+.button-text {
   white-space: nowrap;
   color: hsl(0, 0%, 100%);
   font-size: 1.6rem;
@@ -606,7 +810,7 @@ main {
   line-height: 2rem;
 }
 @media screen and (min-width: 61rem) {
-  .info__cart--cart {
+  .button {
     width: 100%;
   }
 }

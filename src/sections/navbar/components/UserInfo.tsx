@@ -24,6 +24,11 @@ export const UserInfo = (props: any) => {
                     height={20}
                     width={22}
                 />
+                {props.shoppingCart.quantity > 0 && (
+                    <div className="navbar__userInfo--cartIcon-quantity">
+                        {props.shoppingCart.quantity}
+                    </div>
+                )}
             </div>
             <div
                 className="navbar__userInfo--avatar"
@@ -48,7 +53,12 @@ export const UserInfo = (props: any) => {
                     setShowCart={setShowCart}
                 />
             )}
-            {showUserMenu && <UserMenu setShowUserMenu={setShowUserMenu} />}
+            {showUserMenu && (
+                <UserMenu
+                    setShowUserMenu={setShowUserMenu}
+                    setShowCart={setShowCart}
+                />
+            )}
         </div>
     );
 };

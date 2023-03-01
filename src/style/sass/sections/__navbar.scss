@@ -82,11 +82,32 @@
 
         &--cartIcon {
             cursor: pointer;
+            position: relative;
             &:hover path {
                 fill: $black;
             }
             & path {
                 fill: $grayBlueD;
+            }
+            &-quantity {
+                position: absolute;
+                top: -20%;
+                right: -30%;
+                display: grid;
+                place-items: center;
+                background: $orange;
+                color: $white;
+                font-size: 1rem;
+                font-weight: 700;
+                line-height: 1.2rem;
+                // padding: 0.3rem 0.6rem;
+                border-radius: 6.5px;
+                -webkit-border-radius: 6.5px;
+                -moz-border-radius: 6.5px;
+                -ms-border-radius: 6.5px;
+                -o-border-radius: 6.5px;
+                width: 19px;
+                height: 13px;
             }
         }
         &--avatar {
@@ -122,7 +143,7 @@
             @media screen and (min-width: $mobile) {
                 top: 6rem;
                 left: 0;
-                width: 36rem;
+                width: 37rem;
                 translate: -50%;
             }
             &-heading {
@@ -136,6 +157,65 @@
                 display: grid;
                 place-items: center;
                 height: 18.8rem;
+                padding: 2.4rem 2.4rem 3.2rem 2.4rem;
+                gap: 2.4rem;
+                &-listing {
+                    display: flex;
+                    align-items: center;
+                    gap: 1.6rem;
+                    &-image {
+                        width: 5rem;
+                        height: 5rem;
+                        border-radius: 0.4rem;
+                        -webkit-border-radius: 0.4rem;
+                        -moz-border-radius: 0.4rem;
+                        -ms-border-radius: 0.4rem;
+                        -o-border-radius: 0.4rem;
+                    }
+                    &-info {
+                        &-title {
+                            font-size: 1.6rem;
+                            font-weight: 400;
+                            line-height: 2.6rem;
+                            color: $grayBlueD;
+                            text-transform: capitalize;
+                        }
+                        &-pricing {
+                            display: flex;
+                            gap: 1rem;
+                            &-quantity {
+                                font-size: 1.6rem;
+                                color: $grayBlueD;
+                                line-height: 2.6rem;
+                            }
+                            &-finalPrice {
+                                font-weight: 700;
+                                line-height: 2.6rem;
+                            }
+                        }
+                    }
+                    &-update {
+                        cursor: pointer;
+                    }
+                    &-delete {
+                        display: grid;
+                        place-items: center;
+                        cursor: pointer;
+                        & svg {
+                            width: 2.2rem;
+                            height: 2rem;
+                        }
+                        &:hover path {
+                            fill: $black;
+                        }
+                        & path {
+                            fill: $grayBlue;
+                        }
+                    }
+                }
+                &-checkout {
+                    width: 100%;
+                }
             }
         }
         &--userMenu {

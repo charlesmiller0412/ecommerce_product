@@ -5,7 +5,13 @@ export const UserMenu = (props: any) => {
             <li className="navbar__userInfo--userMenu-link">
                 <a href="#">Preferences</a>
             </li>
-            <li className="navbar__userInfo--userMenu-link">
+            <li
+                className="navbar__userInfo--userMenu-link"
+                onClick={() => {
+                    props.setShowUserMenu(false);
+                    props.setShowCart(true);
+                }}
+            >
                 <a href="#">Show Cart</a>
             </li>
             <li className="navbar__userInfo--userMenu-link">

@@ -1,7 +1,7 @@
 import Hamburger from "../../assets/icon-menu.svg";
 import Close from "../../assets/icon-close.svg";
-import { Logo } from "../../components/Logo";
-import MobileMenu from "../mobileMenu";
+import { Logo } from "../../assets/Logo";
+import MobileMenu from "../mobileNav/mobileMenu";
 import { UserLinks } from "./components/userLinks";
 import { UserInfo } from "./components/UserInfo";
 
